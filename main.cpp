@@ -41,9 +41,17 @@ int main()
     font2.loadFromFile("arial.ttf");
     sf::Text stopperido;
     sf::Text pont;
+    sf::Text rekordod;
+    sf::Text nyomj;
+    nyomj.setFont(font2);
+    nyomj.setPosition(300,400);
+    nyomj.setString("Nyomj egy billentyût folytatáshoz.");
+    rekordod.setFont(font2);
+    rekordod.setPosition(355,355);
     pont.setFont(font2);
     pont.setPosition(100,0);
     pont.setColor(sf::Color::Yellow);
+
     stopperido.setFont(font2);
     stopperido.setPosition(0,0);
     bool asd=false;
@@ -53,6 +61,7 @@ int main()
     sf::Time ido;
     sf::Clock ora,ora2;
     sf::Time stopper=sf::seconds(60);
+    int rekord;
     Menu menu(ablak.getSize().x, ablak.getSize().y);
     Options options(ablak.getSize().x, ablak.getSize().y);
     while (ablak.isOpen())
@@ -100,6 +109,7 @@ int main()
                     sf::RectangleShape t;
                     t.setPosition(20,0);
                     a.testresz.push_back(t);
+                    a.direction=2;
                     asdf=0;f=1;
                     std::cout<<a.x[0];
                     break;
@@ -149,7 +159,25 @@ int main()
         ora.restart();
         a.test();
         a.fej();
-        a.raharapotte(ablak);
+        if (a.raharapotte())
+        {
+            rekord=a.x.size();
+            asdf=4;
+            a.x.clear();
+            a.y.clear();
+            a.testresz.clear();
+            a.x.push_back(0); a.y.push_back(0);
+            sf::RectangleShape r;
+            r.setPosition(0,0);
+            r.setFillColor(sf::Color::Magenta);
+            a.testresz.push_back(r);
+            a.x.push_back(20); a.y.push_back(0);
+            sf::RectangleShape t;
+            t.setPosition(20,0);
+            a.testresz.push_back(t);
+            a.direction=2;
+            asdf=0;
+        }
       //  std::cout<<options.hang<<std::endl;
 
         a.bekaptae(options.hang);
@@ -170,6 +198,26 @@ int main()
     pont.setString(IntToString(a.x.size()-2));
     ablak.draw(pont);
     ablak.draw(stopperido);
+    if (stopper.asSeconds()<=0)
+    {
+        rekord=a.x.size();
+        asdf=4;
+        a.x.clear();
+        a.y.clear();
+        a.testresz.clear();
+        a.x.push_back(0); a.y.push_back(0);
+        sf::RectangleShape r;
+        r.setPosition(0,0);
+        r.setFillColor(sf::Color::Magenta);
+        a.testresz.push_back(r);
+        a.x.push_back(20); a.y.push_back(0);
+        sf::RectangleShape t;
+        t.setPosition(20,0);
+        a.testresz.push_back(t);
+        a.direction=2;
+   //     asdf=0;f=1;
+   //     std::cout<<a.x[0];
+    }
     ablak.display();
 
     break;
@@ -198,6 +246,8 @@ int main()
 					{
 					case 0:
 			//			std::cout << "Play button has been pressed" << std::endl;
+                        stopper=sf::seconds(60);
+                        ora2.restart();
 						asdf=1;
 						break;
 					case 1:
@@ -285,18 +335,38 @@ int main()
         while (ablak.pollEvent(event))
         {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+            {
+                ora2.restart();
                 asdf=1;
+            }
 
             if (event.type == sf::Event::Closed)
                 ablak.close();
         }
    //     ablak.clear();
+
         options.pause(ablak.getSize().x, ablak.getSize().y,ablak);
         ablak.display();
         break;
     }
+    case 4:
+    {
+        sf::Event event;
+        while (ablak.pollEvent(event))
+        {
+            if (event.type==sf::Event::KeyReleased)
+                asdf=0;
 
+
+            if (event.type == sf::Event::Closed)
+                ablak.close();
+        }
+        ablak.clear();
+        rekordod.setString(IntToString(rekord-2));
+        ablak.draw(rekordod);
+        ablak.display();
+
+    }
     }
     }
 }
-

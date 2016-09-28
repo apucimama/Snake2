@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1475095099 source:f:\codeblocks\snake\snake2\main.cpp
+1475101911 source:f:\codeblocks\snake\snake2\main.cpp
 	<iostream>
+	<sstream>
 	<vector>
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
@@ -15,7 +16,7 @@
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1475070166 f:\codeblocks\snake\snake2\include\kigyo2.h
+1475101887 f:\codeblocks\snake\snake2\include\kigyo2.h
 	<iostream>
 	<vector>
 	<SFML/Graphics.hpp>
@@ -23,7 +24,7 @@
 	<cstdlib>
 	<ctime>
 
-1475082493 source:f:\codeblocks\snake\snake2\src\kigyo2.cpp
+1475101764 source:f:\codeblocks\snake\snake2\src\kigyo2.cpp
 	"kigyo2.h"
 
 1474834034 f:\codeblocks\snake\snake2\include\gyumolcs.h

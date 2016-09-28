@@ -15,7 +15,7 @@ class kigyo
         sf::Sound sound;
         sf::SoundBuffer buffer;
         void keret();
-        void raharapotte(sf::RenderWindow&);
+        bool raharapotte();
         void novekszik();
         sf::Vector2f veg;
         int kigyohossz;
@@ -29,7 +29,7 @@ class kigyo
         virtual ~kigyo();
         void fej();
         sf::RectangleShape alma;
-        int direction=4;
+        int direction=2;
         std::vector<int> x;
         std::vector<int> y;
         std::vector<sf::RectangleShape> testresz;

@@ -190,11 +190,13 @@ void kigyo::novekszik()
    // std::cout<<"asd"<<kigyohossz<<std::endl;
 }
 
-void kigyo::raharapotte(sf::RenderWindow& ablak)
+bool kigyo::raharapotte()
 {
+    bool ivn=false;
     kigyohossz=x.size();
     for (int i=1;i<kigyohossz;i++)
-        if (x[i]==x[0] && y[i]==y[0]) ablak.close();
+        if (x[i]==x[0] && y[i]==y[0]) ivn=true;
+    return ivn;
 }
 
 void kigyo::keret()
