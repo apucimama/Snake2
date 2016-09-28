@@ -43,11 +43,16 @@ int main()
     sf::Text pont;
     sf::Text rekordod;
     sf::Text nyomj;
+    sf::Text vegso;
+    vegso.setFont(font2);
+    vegso.setPosition(220,300);
+    vegso.setString("Végsõ pontszámod:");
     nyomj.setFont(font2);
-    nyomj.setPosition(300,400);
+    nyomj.setPosition(150,500);
     nyomj.setString("Nyomj egy billentyût folytatáshoz.");
     rekordod.setFont(font2);
     rekordod.setPosition(355,355);
+    rekordod.setColor(sf::Color::Yellow);
     pont.setFont(font2);
     pont.setPosition(100,0);
     pont.setColor(sf::Color::Yellow);
@@ -362,6 +367,8 @@ int main()
                 ablak.close();
         }
         ablak.clear();
+        ablak.draw(vegso);
+        ablak.draw(nyomj);
         rekordod.setString(IntToString(rekord-2));
         ablak.draw(rekordod);
         ablak.display();
