@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1475095099 source:f:\codeblocks\snake\snake2\main.cpp
+	<iostream>
+	<vector>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<kigyo2.h>
+	<menu.h>
+	<options.h>
+
+1474393162 source:f:\codeblocks\snake\snake2\src\kigyo.cpp
+	"kigyo.h"
+
+1474395248 f:\codeblocks\snake\snake2\include\kigyo.h
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1475070166 f:\codeblocks\snake\snake2\include\kigyo2.h
+	<iostream>
+	<vector>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<cstdlib>
+	<ctime>
+
+1475082493 source:f:\codeblocks\snake\snake2\src\kigyo2.cpp
+	"kigyo2.h"
+
+1474834034 f:\codeblocks\snake\snake2\include\gyumolcs.h
+	<iostream>
+	<vector>
+	<SFML/Graphics.hpp>
+	<cstdlib>
+	<ctime>
+
+1474834803 source:f:\codeblocks\snake\snake2\src\gyumolcs.cpp
+	"gyumolcs.h"
+
+1475061532 source:f:\codeblocks\snake\snake2\src\menu.cpp
+	"Menu.h"
+
+1475048811 f:\codeblocks\snake\snake2\include\menu.h
+	"SFML/Graphics.hpp"
+
+1475067975 f:\codeblocks\snake\snake2\include\options.h
+	"SFML/Graphics.hpp"
+
+1475071034 source:f:\codeblocks\snake\snake2\src\options.cpp
+	"options.h"
+
