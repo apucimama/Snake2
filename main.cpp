@@ -164,7 +164,7 @@ int main()
   //  sf::sleep(sf::milliseconds(100));
     stopper-=ora2.getElapsedTime();
     ora2.restart();
-    std::cout<<ora2.getElapsedTime().asSeconds();
+ //   std::cout<<ora2.getElapsedTime().asSeconds();
     a.rajzolj(ablak);
     stopperido.setString(FloatToString(stopper.asSeconds()));
     pont.setString(IntToString(a.x.size()-2));
